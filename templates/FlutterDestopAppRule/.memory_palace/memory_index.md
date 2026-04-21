@@ -4,9 +4,19 @@
 
 Store long-lived technical decisions so they survive chat/session context limits.
 
-## Main Hall
+## Main Hall & Context Splitting Rule (Room & Drawer Principle)
 
-- `architecture_decisions.md` - ADR log for major architecture and tooling decisions.
+To prevent context bloat, **NEVER dump everything into a single monolithic file.** The Memory Palace is divided into specific "Rooms". As a Copilot Agent, you MUST only read the specific room relevant to the user's current prompt.
+
+- `architecture_decisions.md` - Core ADRs for system-wide tooling and high-level architecture only.
+- _(Add new files here as the project grows, e.g., `ui_decisions.md`, `state_management_decisions.md`, etc.)_
+
+**The Splitting Rule:** If any file in the `.memory_palace/` directory exceeds 150 lines or covers more than one specific domain, YOU MUST SPLIT IT.
+
+1. Create a new, highly specific Markdown file (a new "Room").
+2. Move the relevant content to the new file.
+3. Update this `memory_index.md` file with a link and a 1-sentence description of the new Room.
+4. When answering future queries, ONLY load the specific Room needed for the task. DO NOT load the entire Memory Palace.
 
 ## What Belongs Here
 

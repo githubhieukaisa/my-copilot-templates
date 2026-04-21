@@ -23,6 +23,11 @@
 
 Before answering, planning, or generating code, read the required context files.
 
+### Memory Update Protocol (Write Flow)
+
+- If a new architectural decision, pattern, or major technical trade-off is agreed upon during the conversation, YOU MUST proactively propose adding it to `.memory_palace/architecture_decisions.md` (or the relevant room).
+- NEVER let important context get lost in the chat history. Always summarize and update the Memory Palace.
+
 ### Architectural or Historical Questions
 
 - Read `.memory_palace/memory_index.md` first.
