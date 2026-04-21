@@ -4,9 +4,12 @@
 
 Store long-lived technical decisions so they survive chat/session context limits.
 
-## Main Hall
+## Main Hall & Context Splitting Rule (Room & Drawer Principle)
 
-- `architecture_decisions.md` - ADR log for major architecture and tooling decisions.
+To prevent context bloat, **NEVER dump everything into a single monolithic file.** The Memory Palace is divided into specific "Rooms". As a Copilot Agent, you MUST only read the specific room relevant to the user's current prompt.
+
+- `architecture_decisions.md` - Core ADRs for system-wide tooling and high-level architecture only.
+- _(Add new files here as the project grows, e.g., `ui_decisions.md`, `state_management_decisions.md`, etc.)_
 
 ## What Belongs Here
 
